@@ -3,7 +3,7 @@ const app = express();
 const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 const PORT = process.env.PORT || 3000;
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`))
 
 app.get('/api/ns/departures/:code', (req, res) => {
   var params = `maxJourneys=25&lang=nl&station=${req.params.code}`
