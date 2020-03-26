@@ -1,0 +1,21 @@
+{
+  "name": "tuta",
+  "version": "1.0.0",
+  "description": "",
+  "main": "api/ns.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://DannyPX@dev.azure.com/DannyPX/TUTA/_git/TUTA"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "jquery": "^3.4.1",
+    "jsdom": "^16.2.1",
+    "xmlhttprequest": "^1.8.0"
+  }
+}
