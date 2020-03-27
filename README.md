@@ -583,8 +583,8 @@ Status 200 OK
 
 |Parameter      |Type           |Format         |Example      |
 |---------------|---------------|---------------|-------------|
-|lat            |`Int`          |XX.XX          |`51.48`      |
-|lon            |`Int`          |XX.XX          |`5.66`       |
+|lat            |`Int`          |`XX.XX`        |`51.48`      |
+|lon            |`Int`          |`XX.XX`        |`5.66`       |
 
 ### __Example__
 > .../api/weer/get2HForecast/51.48&5.66
