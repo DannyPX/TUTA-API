@@ -143,3 +143,27 @@ function BusHTTPRequest(Http, url, params) {
   Http.open("GET", url + "?" + params)
   Http.send()
 }
+
+app.get('/api/weer/get2HForecast/:lat&:lon', (req, res) => {
+  var params = `lat=${req.params.lat}&lon=${req.params.lon}`
+  const Http = new XMLHttpRequest()
+  const url = 'https://gpsgadget.buienradar.nl/data/raintext/';
+  Http.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      var rainList = {neerslag: []}
+      var rain = this.responseText.split(/\r?\n/)
+      rain.pop()
+      rain.forEach(element => {
+        rainList.neerslag.push(
+          {
+            amount: Math.pow(10, ((parseInt(element.split('|')[0])-109)/32)).toFixed(2),
+            time: element.split('|')[1]
+          }
+        )
+      })
+      res.json(rainList)
+    }
+  };
+  Http.open("GET", url + "?" + params)
+  Http.send()
+})
