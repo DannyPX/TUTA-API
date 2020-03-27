@@ -566,3 +566,68 @@ Status 200 OK
     ...
 ]
 ```
+
+# Rain API
+| | | |
+|-|-|-|
+|Host   |`/api/weer/`   |
+|Version|`0.2.1`        |
+---
+## get2HForecast
+| | | |
+|-|-|-|
+|Request URL|`/api/weer/get2HForecast/{lat}${lon}`   |
+|DataType   |`JSON` |
+
+### __Parameters__
+
+|Parameter      |Type           |Format         |Example      |
+|---------------|---------------|---------------|-------------|
+|lat            |`Int`          |XX.XX          |`51.48`      |
+|lon            |`Int`          |XX.XX          |`5.66`       |
+
+### __Example__
+> .../api/weer/get2HForecast/51.48&5.66
+```javascript
+Status 200 OK:
+{
+    neerslag: [{
+            amount: "0.00",
+            time: "12:35"
+        },
+        {
+            amount: "0.00",
+            time: "12:40"
+        },
+        {
+            amount: "0.00",
+            time: "12:45"
+        },
+        {
+            amount: "0.00",
+            time: "12:50"
+        },
+        {
+            amount: "0.00",
+            time: "12:55"
+        },
+        {
+            amount: "0.00",
+            time: "13:00"
+        },
+        {
+            amount: "0.00",
+            time: "13:05"
+        },
+        {
+            amount: "0.00",
+            time: "13:10"
+        },
+        {
+            amount: "0.00",
+            time: "13:15"
+        },
+        ...
+    ]
+}
+```
