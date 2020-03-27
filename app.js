@@ -1,3 +1,11 @@
+var marked = require('marked');
+var fs = require('fs');
+
+var readMe = fs.readFileSync('README.md', 'utf-8');
+var markdownReadMe = marked(readMe);
+var markdownReadMe = "<html><head><link rel='stylesheet' href='style.css'></head><body>" + markdownReadMe + "</body></html>"
+fs.writeFileSync('./index.html', markdownReadMe);
+
 const express = require('express')
 const app = express();
 const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;

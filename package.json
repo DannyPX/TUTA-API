@@ -17,5 +17,8 @@
     "jquery": "^3.4.1",
     "jsdom": "^16.2.1",
     "xmlhttprequest": "^1.8.0"
+  },
+  "devDependencies": {
+    "marked": "^0.8.2"
   }
 }
