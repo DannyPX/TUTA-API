@@ -1,5 +1,6 @@
 var marked = require('marked');
 var fs = require('fs');
+var path = require('path')
 
 var readMe = fs.readFileSync('README.md', 'utf-8');
 var markdownReadMe = marked(readMe);
@@ -12,6 +13,10 @@ const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`))
+
+app.get('/', function(req,  res) {
+  res.sendFile(path.join(__dirname + '/index.html'))
+})
 
 app.get('/api/ns/departures/:code', (req, res) => {
   var params = `maxJourneys=25&lang=nl&station=${req.params.code}`
