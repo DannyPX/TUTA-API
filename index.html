@@ -1,5 +1,845 @@
-<html>
-    <body>
-        <object data="README.html" type="text/html"></object> 
-    </body>
-</html>
+<html><head><style>body{font-family:Helvetica,arial,sans-serif;font-size:14px;line-height:1.6;padding-top:10px;padding-bottom:10px;background-color:#fff;padding:30px}body>:first-child{margin-top:0!important}body>:last-child{margin-bottom:0!important}a{color:#4183c4}a.absent{color:#c00}a.anchor{display:block;padding-left:30px;margin-left:-30px;cursor:pointer;position:absolute;top:0;left:0;bottom:0}h1,h2,h3,h4,h5,h6{margin:20px 0 10px;padding:0;font-weight:700;-webkit-font-smoothing:antialiased;cursor:text;position:relative}h1:hover a.anchor,h2:hover a.anchor,h3:hover a.anchor,h4:hover a.anchor,h5:hover a.anchor,h6:hover a.anchor{background:url(../../images/modules/styleguide/para.png) no-repeat 10px center;text-decoration:none}h1 code,h1 tt{font-size:inherit}h2 code,h2 tt{font-size:inherit}h3 code,h3 tt{font-size:inherit}h4 code,h4 tt{font-size:inherit}h5 code,h5 tt{font-size:inherit}h6 code,h6 tt{font-size:inherit}h1{font-size:28px;color:#000}h2{font-size:24px;border-bottom:1px solid #ccc;color:#000}h3{font-size:18px}h4{font-size:16px}h5{font-size:14px}h6{color:#777;font-size:14px}blockquote,dl,li,ol,p,pre,table,ul{margin:15px 0}hr{background:transparent url(../../images/modules/pulls/dirty-shade.png) repeat-x 0 0;border:0 none;color:#ccc;height:4px;padding:0}body>h2:first-child{margin-top:0;padding-top:0}body>h1:first-child{margin-top:0;padding-top:0}body>h1:first-child+h2{margin-top:0;padding-top:0}body>h3:first-child,body>h4:first-child,body>h5:first-child,body>h6:first-child{margin-top:0;padding-top:0}a:first-child h1,a:first-child h2,a:first-child h3,a:first-child h4,a:first-child h5,a:first-child h6{margin-top:0;padding-top:0}h1 p,h2 p,h3 p,h4 p,h5 p,h6 p{margin-top:0}li p.first{display:inline-block}ol,ul{padding-left:30px}ol :first-child,ul :first-child{margin-top:0}ol :last-child,ul :last-child{margin-bottom:0}dl{padding:0}dl dt{font-size:14px;font-weight:700;font-style:italic;padding:0;margin:15px 0 5px}dl dt:first-child{padding:0}dl dt>:first-child{margin-top:0}dl dt>:last-child{margin-bottom:0}dl dd{margin:0 0 15px;padding:0 15px}dl dd>:first-child{margin-top:0}dl dd>:last-child{margin-bottom:0}blockquote{border-left:4px solid #ddd;padding:0 15px;color:#777}blockquote>:first-child{margin-top:0}blockquote>:last-child{margin-bottom:0}table{padding:0}table tr{background-color:#fff;margin:0;padding:0}table tr th{font-weight:700;text-align:left;margin:0;padding:6px 13px}table tr td{text-align:left;margin:0;padding:6px 13px}table tr td :first-child,table tr th :first-child{margin-top:0}table tr td :last-child,table tr th :last-child{margin-bottom:0}img{max-width:100%}span.frame{display:block;overflow:hidden}span.frame>span{border:1px solid #ddd;display:block;float:left;overflow:hidden;margin:13px 0 0;padding:7px;width:auto}span.frame span img{display:block;float:left}span.frame span span{clear:both;color:#333;display:block;padding:5px 0 0}span.align-center{display:block;overflow:hidden;clear:both}span.align-center>span{display:block;overflow:hidden;margin:13px auto 0;text-align:center}span.align-center span img{margin:0 auto;text-align:center}span.align-right{display:block;overflow:hidden;clear:both}span.align-right>span{display:block;overflow:hidden;margin:13px 0 0;text-align:right}span.align-right span img{margin:0;text-align:right}span.float-left{display:block;margin-right:13px;overflow:hidden;float:left}span.float-left span{margin:13px 0 0}span.float-right{display:block;margin-left:13px;overflow:hidden;float:right}span.float-right>span{display:block;overflow:hidden;margin:13px auto 0;text-align:right}code,tt{margin:0 2px;padding:0 5px;white-space:nowrap;border:1px solid #eaeaea;background-color:#f8f8f8;border-radius:3px}pre code{margin:0;padding:0;white-space:pre;border:none;background:0 0}.highlight pre{background-color:#f8f8f8;border:1px solid #ccc;font-size:13px;line-height:19px;overflow:auto;padding:6px 10px;border-radius:3px}pre{background-color:#f8f8f8;border:1px solid #ccc;font-size:13px;line-height:19px;overflow:auto;padding:6px 10px;border-radius:3px}pre code,pre tt{background-color:transparent;border:none}</style></head><body><h1 id="tuta-api-documentation">TUTA API DOCUMENTATION</h1>
+<blockquote>
+<p>Version: 0.2</p>
+</blockquote>
+<blockquote>
+<p>Version name: 9292 implementation</p>
+</blockquote>
+<blockquote>
+<p>Author: Danny Vu &amp; Jorrit Verstappen</p>
+</blockquote>
+<h1 id="ns-api">NS API</h1>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Host</td>
+<td><code>/api/ns/</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Version</td>
+<td><code>0.1.3</code></td>
+<td></td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="stations">stations</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Request URL</td>
+<td><code>/api/ns/stations</code></td>
+<td></td>
+</tr>
+<tr>
+<td>DataType</td>
+<td><code>JSON</code></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="parameters"><strong>Parameters</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Format</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>None</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="example"><strong>Example</strong></h3>
+<blockquote>
+<p>.../api/ns/stations</p>
+</blockquote>
+<pre><code class="language-javascript">Status 200 OK:
+[
+    ...
+    {
+        code: &quot;EHV&quot;,
+        namen:  {
+            lang:   &quot;Eindhoven Centraal&quot;,
+            kort:   &quot;Eindhovn C&quot;,
+            middel: &quot;Eindhoven C.&quot;
+        }
+    },
+    {
+        code: &quot;EHS&quot;,
+        namen:  {
+            lang:   &quot;Eindhoven Strijp-S&quot;,
+            kort:   &quot;Strijp-S&quot;,
+            middel: &quot;Strijp-S&quot;
+        }
+    },
+    ...
+]</code></pre>
+<hr>
+<h2 id="departures">departures</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Request URL</td>
+<td><code>/api/ns/departures/{code}</code></td>
+<td></td>
+</tr>
+<tr>
+<td>DataType</td>
+<td><code>JSON</code></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="parameters-1"><strong>Parameters</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Format</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>code</td>
+<td><code>String</code></td>
+<td></td>
+<td><code>EHV</code></td>
+</tr>
+</tbody></table>
+<h3 id="example-1"><strong>Example</strong></h3>
+<blockquote>
+<p>.../api/ns/departures/EHV</p>
+</blockquote>
+<pre><code class="language-javascript">Status 200 OK:
+[
+    ...
+    {
+        direction: &quot;Deurne&quot;,
+        plannedDateTime: &quot;2020-03-27T09:35:00+0100&quot;,
+        actualDateTime: &quot;2020-03-27T09:35:00+0100&quot;,
+        plannedTrack: &quot;1&quot;,
+        product: {
+            number: &quot;4427&quot;,
+            categoryCode: &quot;SPR&quot;,
+            shortCategoryName: &quot;NS Sprinter&quot;,
+            longCategoryName: &quot;Sprinter&quot;,
+            operatorCode: &quot;NS&quot;,
+            operatorName: &quot;NS&quot;,
+            type: &quot;TRAIN&quot;
+        }
+    },
+    {
+        direction: &quot;Alkmaar&quot;,
+        plannedDateTime: &quot;2020-03-27T09:36:00+0100&quot;,
+        actualDateTime: &quot;2020-03-27T09:36:00+0100&quot;,
+        plannedTrack: &quot;4&quot;,
+        product: {
+            number: &quot;830&quot;,
+            categoryCode: &quot;IC&quot;,
+            shortCategoryName: &quot;NS Intercity&quot;,
+            longCategoryName: &quot;Intercity&quot;,
+            operatorCode: &quot;NS&quot;,
+            operatorName: &quot;NS&quot;,
+            type: &quot;TRAIN&quot;
+        }
+    },
+    ...
+]</code></pre>
+<hr>
+<h2 id="gettrips">getTrips</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Request URL</td>
+<td><code>/api/ns/getTrips/{origin}&amp;{destination}</code></td>
+<td></td>
+</tr>
+<tr>
+<td>DataType</td>
+<td><code>JSON</code></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="parameters-2"><strong>Parameters</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Format</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>origin</td>
+<td><code>String</code></td>
+<td></td>
+<td><code>EHV</code></td>
+</tr>
+<tr>
+<td>destination</td>
+<td><code>String</code></td>
+<td></td>
+<td><code>HM</code></td>
+</tr>
+</tbody></table>
+<h3 id="example-2"><strong>Example</strong></h3>
+<blockquote>
+<p>.../api/ns/getTrips/EHV&amp;HM</p>
+</blockquote>
+<pre><code class="language-javascript">Status 200 OK:
+[
+    ...
+    {
+        legs: [{
+            idx: &quot;0&quot;,
+            name: &quot;IC 3531 &quot;,
+            travelType: &quot;PUBLIC_TRANSIT&quot;,
+            direction: &quot;Venlo&quot;,
+            cancelled: false,
+            changePossible: true,
+            alternativeTransport: false,
+            journeyDetailRef: &quot;1|464716|1|884|27032020&quot;,
+            origin: {
+                name: &quot;Eindhoven Centraal&quot;,
+                lng: 5.479977,
+                lat: 51.442362,
+                countryCode: &quot;NL&quot;,
+                uicCode: &quot;8400206&quot;,
+                type: &quot;STATION&quot;,
+                prognosisType: &quot;PROGNOSED&quot;,
+                plannedTimeZoneOffset: 60,
+                plannedDateTime: &quot;2020-03-27T10:49:00+0100&quot;,
+                plannedTrack: &quot;2&quot;,
+                checkinStatus: &quot;CHECKIN&quot;,
+                notes: [{
+                        value: &quot;Station Accessible or Travel Assistance&quot;,
+                        key: &quot;IS&quot;,
+                        noteType: &quot;ATTRIBUTE&quot;,
+                        priority: 0,
+                        isPresentationRequired: false,
+                        category: &quot;UNKNOWN&quot;
+                    },
+                    {
+                        value: &quot;Station is Accessible&quot;,
+                        key: &quot;SH&quot;,
+                        noteType: &quot;ATTRIBUTE&quot;,
+                        priority: 0,
+                        isPresentationRequired: false,
+                        category: &quot;UNKNOWN&quot;
+                    },
+                    {
+                        value: &quot;Travel Assistance available at this station&quot;,
+                        key: &quot;SS&quot;,
+                        noteType: &quot;ATTRIBUTE&quot;,
+                        priority: 0,
+                        isPresentationRequired: false,
+                        category: &quot;UNKNOWN&quot;
+                    },
+                    {
+                        value: &quot;ehv&quot;,
+                        key: &quot;EK&quot;,
+                        noteType: &quot;INFOTEXT&quot;,
+                        isPresentationRequired: false,
+                        category: &quot;UNKNOWN&quot;
+                    }
+                ]
+            },
+            destination: {
+                name: &quot;Helmond&quot;,
+                lng: 5.661694,
+                lat: 51.475874,
+                countryCode: &quot;NL&quot;,
+                uicCode: &quot;8400313&quot;,
+                type: &quot;STATION&quot;,
+                prognosisType: &quot;PROGNOSED&quot;,
+                plannedTimeZoneOffset: 60,
+                plannedDateTime: &quot;2020-03-27T10:58:00+0100&quot;,
+                plannedTrack: &quot;2&quot;,
+                exitSide: &quot;LEFT&quot;,
+                checkinStatus: &quot;CHECKOUT&quot;,
+                notes: [{
+                        value: &quot;Station Accessible or Travel Assistance&quot;,
+                        key: &quot;IS&quot;,
+                        noteType: &quot;ATTRIBUTE&quot;,
+                        priority: 0,
+                        isPresentationRequired: false,
+                        category: &quot;UNKNOWN&quot;
+                    },
+                    {
+                        value: &quot;Travel Assistance available at this station&quot;,
+                        key: &quot;SS&quot;,
+                        noteType: &quot;ATTRIBUTE&quot;,
+                        priority: 0,
+                        isPresentationRequired: false,
+                        category: &quot;UNKNOWN&quot;
+                    },
+                    {
+                        value: &quot;hm&quot;,
+                        key: &quot;EK&quot;,
+                        noteType: &quot;INFOTEXT&quot;,
+                        isPresentationRequired: false,
+                        category: &quot;UNKNOWN&quot;
+                    }
+                ]
+            },
+            product: {
+                number: &quot;3531&quot;,
+                categoryCode: &quot;IC&quot;,
+                shortCategoryName: &quot;IC&quot;,
+                longCategoryName: &quot;Intercity&quot;,
+                operatorCode: &quot;ns&quot;,
+                operatorName: &quot;NS&quot;,
+                type: &quot;TRAIN&quot;,
+                displayName: &quot;NS Intercity&quot;
+            },
+            notes: [{
+                    value: &quot;+eas, source RAST attributonstation, durch TPSI berechnet&quot;,
+                    key: &quot;ES&quot;,
+                    noteType: &quot;ATTRIBUTE&quot;,
+                    priority: 0,
+                    routeIdxFrom: 22,
+                    routeIdxTo: 22,
+                    isPresentationRequired: false,
+                    category: &quot;UNKNOWN&quot;
+                },
+                {
+                    value: &quot;+eas, source RAST attributonstation, durch TPSI berechnet&quot;,
+                    key: &quot;ES&quot;,
+                    noteType: &quot;ATTRIBUTE&quot;,
+                    priority: 0,
+                    routeIdxFrom: 25,
+                    routeIdxTo: 25,
+                    isPresentationRequired: false,
+                    category: &quot;UNKNOWN&quot;
+                }
+            ],
+            messages: [],
+            stops: [{
+                    uicCode: &quot;8400206&quot;,
+                    name: &quot;Eindhoven Centraal&quot;,
+                    lng: 5.479977,
+                    lat: 51.442362,
+                    countryCode: &quot;NL&quot;,
+                    notes: [{
+                            value: &quot;Station Accessible or Travel Assistance&quot;,
+                            key: &quot;IS&quot;,
+                            type: &quot;A&quot;,
+                            priority: 0
+                        },
+                        {
+                            value: &quot;Station is Accessible&quot;,
+                            key: &quot;SH&quot;,
+                            type: &quot;A&quot;,
+                            priority: 0
+                        },
+                        {
+                            value: &quot;Travel Assistance available at this station&quot;,
+                            key: &quot;SS&quot;,
+                            type: &quot;A&quot;,
+                            priority: 0
+                        }
+                    ],
+                    routeIdx: 22,
+                    plannedDepartureDateTime: &quot;2020-03-27T10:49:00+0100&quot;,
+                    plannedDepartureTimeZoneOffset: 60,
+                    plannedDepartureTrack: &quot;2&quot;,
+                    cancelled: false,
+                    borderStop: false,
+                    passing: false
+                },
+                {
+                    uicCode: &quot;8400242&quot;,
+                    name: &quot;Helmond Brandevoort&quot;,
+                    lng: 5.60881,
+                    lat: 51.462498,
+                    countryCode: &quot;NL&quot;,
+                    notes: [],
+                    routeIdx: 23,
+                    plannedDepartureTimeZoneOffset: 60,
+                    plannedArrivalTimeZoneOffset: 60,
+                    cancelled: false,
+                    borderStop: false,
+                    passing: true
+                },
+                {
+                    uicCode: &quot;8400300&quot;,
+                    name: &quot;Helmond &#39;t Hout&quot;,
+                    lng: 5.630852,
+                    lat: 51.467936,
+                    countryCode: &quot;NL&quot;,
+                    notes: [],
+                    routeIdx: 24,
+                    plannedDepartureTimeZoneOffset: 60,
+                    plannedArrivalTimeZoneOffset: 60,
+                    cancelled: false,
+                    borderStop: false,
+                    passing: true
+                },
+                {
+                    uicCode: &quot;8400313&quot;,
+                    name: &quot;Helmond&quot;,
+                    lng: 5.661694,
+                    lat: 51.475874,
+                    countryCode: &quot;NL&quot;,
+                    notes: [{
+                            value: &quot;Station Accessible or Travel Assistance&quot;,
+                            key: &quot;IS&quot;,
+                            type: &quot;A&quot;,
+                            priority: 0
+                        },
+                        {
+                            value: &quot;Travel Assistance available at this station&quot;,
+                            key: &quot;SS&quot;,
+                            type: &quot;A&quot;,
+                            priority: 0
+                        }
+                    ],
+                    routeIdx: 25,
+                    plannedArrivalDateTime: &quot;2020-03-27T10:58:00+0100&quot;,
+                    plannedArrivalTimeZoneOffset: 60,
+                    plannedArrivalTrack: &quot;2&quot;,
+                    cancelled: false,
+                    borderStop: false,
+                    passing: false
+                }
+            ],
+            steps: [],
+            punctuality: 100,
+            shorterStock: false,
+            journeyDetail: [{
+                type: &quot;TRAIN_XML&quot;,
+                link: {
+                    uri: &quot;https://ews-rpx.ns.nl/mobile-api-serviceinfo?companycode=ns&amp;ritnummer=3531&amp;datetime=2020-03-27T10%3A49%3A00%2B01%3A00&quot;,
+                    params: {}
+                }
+            }],
+            reachable: false
+        }]
+    },
+    ...
+]</code></pre>
+<h1 id="9292-api">9292 API</h1>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Host</td>
+<td><code>/api/9292/</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Version</td>
+<td><code>0.2.1</code></td>
+<td></td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="searchlocation">searchLocation</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Request URL</td>
+<td><code>/api/9292/searchLocation/{keyword}</code></td>
+<td></td>
+</tr>
+<tr>
+<td>DataType</td>
+<td><code>JSON</code></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="parameters-3"><strong>Parameters</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Format</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>keyword</td>
+<td><code>String</code></td>
+<td></td>
+<td><code>Eindhoven</code></td>
+</tr>
+</tbody></table>
+<h3 id="example-3"><strong>Example</strong></h3>
+<blockquote>
+<p>.../api/9292/searchLocation/Eindhoven</p>
+</blockquote>
+<pre><code class="language-javascript">Status 200 OK:
+[
+    ...
+    {
+        id: &quot;station-eindhoven&quot;,
+        type: &quot;station&quot;
+    },
+    {
+        id: &quot;station-eindhoven-strijp-s&quot;,
+        type: &quot;station&quot;
+    },
+    {
+        id: &quot;eindhoven&quot;,
+        type: &quot;place&quot;
+    },
+    {
+        id: &quot;eindhoven_ggd-gezondheidsdienst&quot;,
+        type: &quot;poi&quot;
+    },
+    ...
+]</code></pre>
+<hr>
+<h2 id="gettrips-1">getTrips</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Request URL</td>
+<td><code>/api/ns/9292/getTrips/{origin}&amp;{destination}&amp;{dateTime}</code></td>
+<td></td>
+</tr>
+<tr>
+<td>DataType</td>
+<td><code>JSON</code></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="parameters-4"><strong>Parameters</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Format</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>origin</td>
+<td><code>String</code></td>
+<td></td>
+<td><code>station-eindhoven</code></td>
+</tr>
+<tr>
+<td>destination</td>
+<td><code>String</code></td>
+<td></td>
+<td><code>station-helmond</code></td>
+</tr>
+<tr>
+<td>dateTime</td>
+<td><code>String</code></td>
+<td><code>{yyyy-MM-ss}T{HHmm}</code></td>
+<td><code>2020-03-26T1754</code></td>
+</tr>
+</tbody></table>
+<h3 id="example-4"><strong>Example</strong></h3>
+<blockquote>
+<p>.../api/9292/getTrips/station-eindhoven&amp;station-helmond&amp;2020-03-26T1754</p>
+</blockquote>
+<pre><code class="language-javascript">Status 200 OK
+[
+    ...
+    {
+    numberOfChanges: 0,
+    legs: [{
+        type: &quot;scheduled&quot;,
+        mode: {
+            type: &quot;train&quot;,
+            name: &quot;Intercity&quot;
+        },
+        destination: &quot;Venlo&quot;,
+        operator: {
+            type: &quot;NS&quot;,
+            name: &quot;NS&quot;,
+            contactpageurl: &quot;https://www.ns.nl/formulieren/contact.html&quot;,
+            code: &quot;1&quot;
+        },
+        service: &quot;3559&quot;,
+        serviceColour: null,
+        attributes: [],
+        disturbancePlannerIds: [
+            &quot;20190728&quot;
+        ],
+        serviceMessageIds: [],
+        stops: [{
+                arrival: &quot;2020-03-26T17:43&quot;,
+                departure: &quot;2020-03-26T17:49&quot;,
+                platform: &quot;2&quot;,
+                location: {
+                    id: &quot;station-eindhoven&quot;,
+                    type: &quot;station&quot;,
+                    stationId: &quot;ehv&quot;,
+                    stationType: &quot;Station&quot;,
+                    name: &quot;Eindhoven Centraal&quot;,
+                    place: {
+                        name: &quot;Eindhoven&quot;,
+                        regionCode: &quot;NB&quot;,
+                        regionName: &quot;Noord-Brabant&quot;,
+                        showRegion: false,
+                        countryCode: &quot;NL&quot;,
+                        countryName: &quot;Nederland&quot;,
+                        showCountry: false
+                    },
+                    latLong: {
+                        lat: 51.44281,
+                        long: 5.47969
+                    },
+                    urls: {
+                        nl - NL: &quot;/station-eindhoven&quot;,
+                        en - GB: &quot;/en/station-eindhoven&quot;
+                    }
+                },
+                fallbackName: null,
+                stopId: &quot;33351&quot;,
+                stopDetails: {
+                    destination: &quot;Den Haag Centraal,Eindhoven Centraal,Venlo,Dordrecht,Deurne,Rotterdam Centraal,Enkhuizen,Maastricht,Schiphol,Heerlen,Oss,Tilburg Universiteit,Weert,Den Helder,Tilburg,s Hertogenbosch,Zaandam&quot;,
+                    disabledaccessibilityvisible: false,
+                    disabledaccessible: null,
+                    visuallyaccessibilityvisible: false,
+                    visuallyaccessible: null,
+                    bicyclestorage: &quot;N&quot;,
+                    bicyclestoragecapacity: &quot;0&quot;,
+                    rdmcoord: {
+                        Easting: 161450,
+                        Northing: 383700
+                    },
+                    transports: [{
+                            Type: &quot;Trein&quot;,
+                            Product: &quot;Stopbus i.p.v. trein&quot;
+                        },
+                        {
+                            Type: &quot;Trein&quot;,
+                            Product: &quot;Intercity&quot;
+                        },
+                        {
+                            Type: &quot;Trein&quot;,
+                            Product: &quot;Snelbus i.p.v. trein&quot;
+                        },
+                        {
+                            Type: &quot;Trein&quot;,
+                            Product: &quot;Sprinter&quot;
+                        }
+                    ]
+                },
+                callType: &quot;Board&quot;,
+                clusterId: &quot;ehv&quot;
+            },
+            {
+                arrival: &quot;2020-03-26T17:58&quot;,
+                departure: &quot;2020-03-26T17:58&quot;,
+                platform: &quot;2&quot;,
+                location: {
+                    id: &quot;station-helmond&quot;,
+                    type: &quot;station&quot;,
+                    stationId: &quot;hm&quot;,
+                    stationType: &quot;Station&quot;,
+                    name: &quot;Helmond&quot;,
+                    place: {
+                        name: &quot;Helmond&quot;,
+                        regionCode: &quot;NB&quot;,
+                        regionName: &quot;Noord-Brabant&quot;,
+                        showRegion: false,
+                        countryCode: &quot;NL&quot;,
+                        countryName: &quot;Nederland&quot;,
+                        showCountry: false
+                    },
+                    latLong: {
+                        lat: 51.475512,
+                        long: 5.661695
+                    },
+                    urls: {
+                        nl - NL: &quot;/station-helmond&quot;,
+                        en - GB: &quot;/en/station-helmond&quot;
+                    }
+                },
+                fallbackName: null,
+                stopId: &quot;1373&quot;,
+                stopDetails: {
+                    destination: &quot;Eindhoven Centraal,Venlo,Deurne,Schiphol,Dordrecht,Oss&quot;,
+                    disabledaccessibilityvisible: false,
+                    disabledaccessible: null,
+                    visuallyaccessibilityvisible: false,
+                    visuallyaccessible: null,
+                    bicyclestorage: &quot;N&quot;,
+                    bicyclestoragecapacity: &quot;0&quot;,
+                    rdmcoord: {
+                        Easting: 174070,
+                        Northing: 387460
+                    },
+                    transports: [{
+                            Type: &quot;Trein&quot;,
+                            Product: &quot;Intercity&quot;
+                        },
+                        {
+                            Type: &quot;Trein&quot;,
+                            Product: &quot;Sprinter&quot;
+                        }
+                    ]
+                },
+                callType: &quot;Exit&quot;,
+                clusterId: &quot;hm&quot;
+            }
+        ]
+    }]
+    },
+    ...
+]</code></pre>
+<h1 id="rain-api">Rain API</h1>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Host</td>
+<td><code>/api/weer/</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Version</td>
+<td><code>0.2.1</code></td>
+<td></td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="get2hforecast">get2HForecast</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Request URL</td>
+<td><code>/api/weer/get2HForecast/{lat}${lon}</code></td>
+<td></td>
+</tr>
+<tr>
+<td>DataType</td>
+<td><code>JSON</code></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="parameters-5"><strong>Parameters</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Format</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>lat</td>
+<td><code>Int</code></td>
+<td><code>XX.XX</code></td>
+<td><code>51.48</code></td>
+</tr>
+<tr>
+<td>lon</td>
+<td><code>Int</code></td>
+<td><code>XX.XX</code></td>
+<td><code>5.66</code></td>
+</tr>
+</tbody></table>
+<h3 id="example-5"><strong>Example</strong></h3>
+<blockquote>
+<p>.../api/weer/get2HForecast/51.48&amp;5.66</p>
+</blockquote>
+<pre><code class="language-javascript">Status 200 OK:
+{
+    neerslag: [{
+            amount: &quot;0.00&quot;,
+            time: &quot;12:35&quot;
+        },
+        {
+            amount: &quot;0.00&quot;,
+            time: &quot;12:40&quot;
+        },
+        {
+            amount: &quot;0.00&quot;,
+            time: &quot;12:45&quot;
+        },
+        {
+            amount: &quot;0.00&quot;,
+            time: &quot;12:50&quot;
+        },
+        {
+            amount: &quot;0.00&quot;,
+            time: &quot;12:55&quot;
+        },
+        {
+            amount: &quot;0.00&quot;,
+            time: &quot;13:00&quot;
+        },
+        {
+            amount: &quot;0.00&quot;,
+            time: &quot;13:05&quot;
+        },
+        {
+            amount: &quot;0.00&quot;,
+            time: &quot;13:10&quot;
+        },
+        {
+            amount: &quot;0.00&quot;,
+            time: &quot;13:15&quot;
+        },
+        ...
+    ]
+}</code></pre>
+</body></html>
