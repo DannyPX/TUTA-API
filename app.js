@@ -8,7 +8,8 @@ var markdownReadMe = "<html><head><style>body{font-family:Helvetica,arial,sans-s
 fs.writeFileSync('./index.html', markdownReadMe);
 
 var allowedOrigins = ['http://localhost:3000',
-                      'https://tatu-app-staging.herokuapp.com/'];
+                      'https://tatu-app-staging.herokuapp.com/',
+                      'https://tatu-app-sm.herokuapp.com/'];
 
 const express = require('express')
 const cors = require('cors')
