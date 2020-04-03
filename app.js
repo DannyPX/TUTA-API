@@ -197,9 +197,9 @@ app.get('/api/weer/get2HForecast/:lat&:lon', (req, res) => {
       var rainList = {}
       var rain = this.responseText.split(/\r?\n/)
       rain.pop()
-      rain.forEach(element => { 
-        Object.assign(rainList, {[element.split('|')[1]]: (Math.pow(10, ((element.split('|')[0]-109)/32))).toFixed(2)})
-      })
+      for (i = 0; i < 12; i++) {
+        Object.assign(rainList, {[rain[i].split('|')[1]]: (Math.pow(10, ((rain[i].split('|')[0]-109)/32))).toFixed(2)})
+      }
       res.json(rainList)
     }
   };
