@@ -1,5 +1,5 @@
 # TUTA API DOCUMENTATION
->Version: 0.2
+>Version: 0.3
 
 >Version name: 9292 implementation
 
@@ -359,7 +359,7 @@ Status 200 OK:
 | | | |
 |-|-|-|
 |Host   |`/api/9292/`   |
-|Version|`0.2.1`        |
+|Version|`0.2.2`        |
 ---
 ## searchLocation
 | | | |
@@ -571,12 +571,12 @@ Status 200 OK
 | | | |
 |-|-|-|
 |Host   |`/api/weer/`   |
-|Version|`0.2.1`        |
+|Version|`0.2.2`        |
 ---
 ## get2HForecast
 | | | |
 |-|-|-|
-|Request URL|`/api/weer/get2HForecast/{lat}${lon}`   |
+|Request URL|`/api/weer/get2HForecast/{lat}&{lon}`   |
 |DataType   |`JSON` |
 
 ### __Parameters__
@@ -591,43 +591,29 @@ Status 200 OK
 ```javascript
 Status 200 OK:
 {
-    neerslag: [{
-            amount: "0.00",
-            time: "12:35"
-        },
-        {
-            amount: "0.00",
-            time: "12:40"
-        },
-        {
-            amount: "0.00",
-            time: "12:45"
-        },
-        {
-            amount: "0.00",
-            time: "12:50"
-        },
-        {
-            amount: "0.00",
-            time: "12:55"
-        },
-        {
-            amount: "0.00",
-            time: "13:00"
-        },
-        {
-            amount: "0.00",
-            time: "13:05"
-        },
-        {
-            amount: "0.00",
-            time: "13:10"
-        },
-        {
-            amount: "0.00",
-            time: "13:15"
-        },
-        ...
-    ]
+    10: 25: "0.00",
+    10: 30: "0.10",
+    10: 35: "0.10",
+    10: 40: "0.10",
+    10: 45: "0.00",
+    10: 50: "0.00",
+    10: 55: "0.00",
+    11: 00: "0.00",
+    11: 05: "0.10",
+    11: 10: "0.10",
+    11: 15: "0.21",
+    11: 20: "0.21",
+    11: 25: "0.21",
+    11: 30: "0.10",
+    11: 35: "0.00",
+    11: 40: "0.00",
+    11: 45: "0.00",
+    11: 50: "0.00",
+    11: 55: "0.00",
+    12: 00: "0.00",
+    12: 05: "0.00",
+    12: 10: "0.00",
+    12: 15: "0.00",
+    12: 20: "0.00"
 }
 ```
