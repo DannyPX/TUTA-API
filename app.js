@@ -194,6 +194,9 @@ app.get('/api/weer/get2HForecast/:lat&:lon', (req, res) => {
   const url = 'https://gpsgadget.buienradar.nl/data/raintext/';
   Http.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
+      if(isNaN(req.params.lat) || isNaN(req.params.lon)) {
+        res.send("Input is not a coordinate")
+      }
       var rainList = {}
       var rain = this.responseText.split(/\r?\n/)
       rain.pop()
