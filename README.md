@@ -569,7 +569,7 @@ Status 200 OK
 | | | |
 |-|-|-|
 |Host   |`/api/weer/`   |
-|Version|`0.3.1`        |
+|Version|`0.3.2`        |
 ---
 ## get2HForecast
 | | | |
@@ -603,6 +603,17 @@ Status 200 OK:
         14: 20: "0.00",
         14: 25: "0.00"
     },
-    city: "Helmond"
+    address: {
+        house_number: "81",
+        road: "Zuidende",
+        neighbourhood: "Binnenstad",
+        suburb: "Helmond",
+        town: "Helmond",
+        state: "North Brabant",
+        postcode: "5701KX",
+        country: "The Netherlands",
+        country_code: "nl",
+        city: "Helmond"
+    }
 }
 ```
