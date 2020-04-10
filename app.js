@@ -191,7 +191,7 @@ app.get('/api/weer/get2HForecast/:lat&:lon', (req, res) => {
   var params =  `lat=${req.params.lat}&` + 
                 `lon=${req.params.lon}`
   const Http = new XMLHttpRequest()
-  const url = 'https://gpsgadget.buienradar.nl/data/raintext/';
+  const url = 'https://gpsgadget.buienradar.nl/data/raintext';
   Http.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       if(isNaN(req.params.lat) || isNaN(req.params.lon)) {
@@ -219,11 +219,16 @@ app.get('/api/weer/location/:lat&:lon', (req, res) => {
   const url = 'https://eu1.locationiq.com/v1/reverse.php';
 
   Http.onreadystatechange = function () {
+    console.log(this.status)
+    console.log(this.readyState)
     if (this.readyState == 4 && this.status == 200) {
       if(isNaN(req.params.lat) || isNaN(req.params.lon)) {
         res.send("Input is not a coordinate")
       }
       res.send(JSON.parse(this.responseText).address.town)
+    }
+    if (this.readyState == 4 && this.status == 404) {
+      res.send("Unknown")
     }
   }
   Http.open("GET", url+ "?" + params)
