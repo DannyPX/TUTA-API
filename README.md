@@ -617,3 +617,23 @@ Status 200 OK:
     }
 }
 ```
+
+## location
+| | | |
+|-|-|-|
+|Request URL|`/api/weer/location/{lat}&{lon}`   |
+|DataType   |`JSON` |
+
+### __Parameters__
+
+|Parameter      |Type           |Format         |Example      |
+|---------------|---------------|---------------|-------------|
+|lat            |`Int`          |`XX.XX`        |`51.48`      |
+|lon            |`Int`          |`XX.XX`        |`5.66`       |
+
+### __Example__
+> .../api/weer/location/51.48&5.66
+```javascript
+Status 200 OK:
+"Helmond"
+```

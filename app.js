@@ -192,39 +192,40 @@ app.get('/api/weer/get2HForecast/:lat&:lon', (req, res) => {
                 `lon=${req.params.lon}`
   const Http = new XMLHttpRequest()
   const url = 'https://gpsgadget.buienradar.nl/data/raintext/';
-  var geoParams =  `lat=${req.params.lat}&` + 
-  `lon=${req.params.lon}&` +
-  `key=${process.env.GEOAPI_KEY}&` +
-  `format=json`
-  const geoHttp = new XMLHttpRequest()
-  const geoUrl = 'https://eu1.locationiq.com/v1/reverse.php';
-  var rainList = {neerslag: {}, address: ""}
   Http.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       if(isNaN(req.params.lat) || isNaN(req.params.lon)) {
         res.send("Input is not a coordinate")
       }
-
+      var rainList = {}
       var rain = this.responseText.split(/\r?\n/)
       rain.pop()
       for (i = 0; i < 12; i++) {
-        Object.assign(rainList.neerslag, {[rain[i].split('|')[1]]: (Math.pow(10, ((rain[i].split('|')[0]-109)/32))).toFixed(2)})
+        Object.assign(rainList, {[rain[i].split('|')[1]]: (Math.pow(10, ((rain[i].split('|')[0]-109)/32))).toFixed(2)})
       }
-      
+      res.json(rainList)
     }
   };
   Http.open("GET", url + "?" + params)
   Http.send()
+})
 
-  geoHttp.onreadystatechange = function () {
+app.get('/api/weer/location/:lat&:lon', (req, res) => {
+  var params =  `lat=${req.params.lat}&` + 
+  `lon=${req.params.lon}&` +
+  `key=${process.env.GEOAPI_KEY}&` +
+  `format=json`
+  const Http = new XMLHttpRequest()
+  const url = 'https://eu1.locationiq.com/v1/reverse.php';
+
+  Http.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       if(isNaN(req.params.lat) || isNaN(req.params.lon)) {
         res.send("Input is not a coordinate")
       }
-      rainList.address = JSON.parse(this.responseText).address
-      res.json(rainList)
+      res.send(JSON.parse(this.responseText).address.town)
     }
   }
-  geoHttp.open("GET", geoUrl+ "?" + geoParams)
-  geoHttp.send()
+  Http.open("GET", url+ "?" + params)
+  Http.send()
 })

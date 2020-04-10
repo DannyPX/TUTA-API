@@ -746,7 +746,7 @@
 </tr>
 <tr>
 <td>Version</td>
-<td><code>0.3.1</code></td>
+<td><code>0.3.2</code></td>
 <td></td>
 </tr>
 </tbody></table>
@@ -814,6 +814,66 @@
         14: 20: &quot;0.00&quot;,
         14: 25: &quot;0.00&quot;
     },
-    city: &quot;Helmond&quot;
+    address: {
+        house_number: &quot;81&quot;,
+        road: &quot;Zuidende&quot;,
+        neighbourhood: &quot;Binnenstad&quot;,
+        suburb: &quot;Helmond&quot;,
+        town: &quot;Helmond&quot;,
+        state: &quot;North Brabant&quot;,
+        postcode: &quot;5701KX&quot;,
+        country: &quot;The Netherlands&quot;,
+        country_code: &quot;nl&quot;,
+        city: &quot;Helmond&quot;
+    }
 }</code></pre>
+<h2 id="location">location</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Request URL</td>
+<td><code>/api/weer/location/{lat}&amp;{lon}</code></td>
+<td></td>
+</tr>
+<tr>
+<td>DataType</td>
+<td><code>JSON</code></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="parameters-6"><strong>Parameters</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Format</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>lat</td>
+<td><code>Int</code></td>
+<td><code>XX.XX</code></td>
+<td><code>51.48</code></td>
+</tr>
+<tr>
+<td>lon</td>
+<td><code>Int</code></td>
+<td><code>XX.XX</code></td>
+<td><code>5.66</code></td>
+</tr>
+</tbody></table>
+<h3 id="example-6"><strong>Example</strong></h3>
+<blockquote>
+<p>.../api/weer/location/51.48&amp;5.66</p>
+</blockquote>
+<pre><code class="language-javascript">Status 200 OK:
+&quot;Ospel&quot;</code></pre>
 </body></html>
