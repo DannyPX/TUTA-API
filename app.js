@@ -219,8 +219,6 @@ app.get('/api/weer/location/:lat&:lon', (req, res) => {
   const url = 'https://eu1.locationiq.com/v1/reverse.php';
 
   Http.onreadystatechange = function () {
-    console.log(this.status)
-    console.log(this.readyState)
     if (this.readyState == 4 && this.status == 200) {
       if(isNaN(req.params.lat) || isNaN(req.params.lon)) {
         res.send("Input is not a coordinate")
