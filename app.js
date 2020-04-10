@@ -198,7 +198,7 @@ app.get('/api/weer/get2HForecast/:lat&:lon', (req, res) => {
   `format=json`
   const geoHttp = new XMLHttpRequest()
   const geoUrl = 'https://eu1.locationiq.com/v1/reverse.php';
-  var rainList = {neerslag: {}, city: ""}
+  var rainList = {neerslag: {}, address: ""}
   Http.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       if(isNaN(req.params.lat) || isNaN(req.params.lon)) {
@@ -221,7 +221,7 @@ app.get('/api/weer/get2HForecast/:lat&:lon', (req, res) => {
       if(isNaN(req.params.lat) || isNaN(req.params.lon)) {
         res.send("Input is not a coordinate")
       }
-      rainList.city = JSON.parse(this.responseText).address.city
+      rainList.address = JSON.parse(this.responseText).address
       res.json(rainList)
     }
   }
